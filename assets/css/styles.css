@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+html {
+    scroll-padding-top: 65px;
+}
+
+body {
+    margin: 0;
+    background: #e1b270;
+}
+
+/* Flexbox */
+main {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    
+    width: 50%;
+    margin: 0 auto;
+    text-align: justify;
+    text-justify: inter-word;
+
+    display: flex;
+    flex-direction: column;
+}
+
+header, footer {
+    text-align: center;
+    background: #A8BFEB;
+    color: #1C1C1C;
+}
+
+.navbar {
+    z-index: 2;
+}
+
+/* Flexbox */
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.navbar li:nth-child(odd) {
+    background: #c19352;
+}
+
+.navbar li:nth-child(odd):hover {
+    background: #dea048;
+}
+
+.navbar li:nth-child(even) {
+    background: #e8b36a;
+}
+
+.navbar li:nth-child(even):hover {
+    background: #eac085;
+}
+
+.navbar li {
+    flex: 1;
+    border: 1.5px solid black;
+
+    /* Nested flexbox */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #030303;
+    /* border: 1px solid black; */
+    padding: 20px;
+    
+    flex: 1;
+    text-align: center;
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+    width: 100%;
+}
+
+.hamburger-menu {
+    display: none;
+}
+
+/* Flexbox */
+.container section:not(.social-media) {
+    flex: 1 1 auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+section {
+    padding: 20px;
+}
+
+/* Flexbox */
+.skills-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+    width: 75%;
+    margin: 25px auto;
+    gap: 25px;
+}
+
+.logo {
+    border: 1px solid rgb(128, 128, 128);
+    padding: 20px;
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    
+    box-shadow: 0px 0px 10px #FEEBEB;
+    background: #FEEBEB;
+}
+
+/* Flexbox */
+.projects-container {
+    width: 75%;
+    margin: 20px auto 20px;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.project {
+    border: 1px solid rgb(173, 172, 172);
+    width: 210px;
+    height: 210px;
+    object-fit: contain;
+    padding: 20px;
+
+    box-shadow: 0px 0px 10px #A20101;
+    background: #A20101;
+}
+
+.projects-container .text {
+    text-align: center;
+    margin: 0;
+    color: white;
+    position: relative;
+    bottom: 50%;
+
+    visibility: hidden;
+}
+
+/* Make text visible when hovering over project */
+.projects-container a:hover .text:nth-child(2) {
+    visibility: visible;
+}
+
+.projects-container a {
+    text-decoration: none; 
+}
+
+.wrap {
+    position: relative;
+}
+
+.wrap::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: calc(100% - 28px);
+    background: #000;
+    opacity: 0;
+    transition: .5s ease;
+}
+
+.wrap:hover::before {
+    opacity: 0.23;
+}
+
+section:nth-child(odd) {
+    background: #A20101;
+    color: #FEEBEB;
+}
+
+section:nth-child(even) {
+    background: #FEEBEB;
+    color: #A20101;
+}
+
+h2 {
+    text-align: center;
+    padding: 20px;
+}
+
+section:nth-child(even) h2 {
+    background: #A20101;
+    color: #FEEBEB;
+}
+
+section:nth-child(odd) h2 {
+    background: #FEEBEB;
+    color: #A20101;
+}
+
+/* Flexbox */
+.social-media-container {
+    display: flex;
+    justify-content: center;
+
+    padding: 10px;
+}
+
+.social-media-container img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+
+    /* border: 1px solid black; */
+}
+
+.social-media-container img:hover {
+    background-color:rgba(192,192,192,0.3);
+}
+
+#email {
+    margin: 0;
+    text-align: center;
+}
+
+footer {
+    padding: 30px;
+}
+
+@media only screen and (max-width: 500px) {
+
+    html {
+        scroll-padding-top: 88px;
+    }
+
+    main {
+        width: 100%;
+    }
+
+    .navbar ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .logo {
+        width: 70px;
+        height: 70px;
+    }
+
+}
+
+@media only screen and (min-width: 501px) {
+
+    html {
+        scroll-padding-top: 88px;
+    }
+
+    main {
+        width: 80%;
+    }
+
+    .logo {
+        width: 80px;
+        height: 80px;
+    }
+
+}
+
+@media only screen and (min-width: 692px) {
+
+    html {
+        scroll-padding-top: 65px;
+    }
+    
+    main {
+        width: 80%;
+    }
+
+    .logo {
+        width: 80px;
+        height: 80px;
+    }
+
+}
+
+@media only screen and (min-width: 786px) {
+
+    main {
+        width: 75%;
+    }
+
+}
+
+@media only screen and (min-width: 940px) {
+
+    main {
+        width: 70%;
+    }
+
+}
+
+@media only screen and (min-width: 1050px) {
+
+    main {
+        width: 65%;
+    }
+
+}
+
+@media only screen and (min-width: 1200px) {
+
+    main {
+        width: 50%;
+    }
+
+}
