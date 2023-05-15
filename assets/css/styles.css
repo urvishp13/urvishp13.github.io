@@ -29,35 +29,48 @@ header, footer {
     color: #1C1C1C;
 }
 
-.nav-container {
+.navbar .menu-items {
+    display: none;
+    list-style-type: none;
+}
+
+.navbar .checkbox {
+    display: none;
+}
+
+.navbar .menu-items a {
+    text-decoration: none;
+}
+
+.nav-expanded {
     z-index: 2;
 }
 
 /* Flexbox */
-.nav-container ul {
+.nav-expanded ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
     display: flex;
 }
 
-.nav-container li:nth-child(odd) {
+.nav-expanded li:nth-child(odd) {
     background: #c19352;
 }
 
-.nav-container li:nth-child(odd):hover {
+.nav-expanded li:nth-child(odd):hover {
     background: #dea048;
 }
 
-.nav-container li:nth-child(even) {
+.nav-expanded li:nth-child(even) {
     background: #e8b36a;
 }
 
-.nav-container li:nth-child(even):hover {
+.nav-expanded li:nth-child(even):hover {
     background: #eac085;
 }
 
-.nav-container li {
+.nav-expanded li {
     flex: 1;
     border: 1.5px solid black;
 
@@ -67,7 +80,7 @@ header, footer {
     align-items: center;
 }
 
-.nav-container a {
+.nav-link {
     text-decoration: none;
     color: #030303;
     /* border: 1px solid black; */
@@ -248,27 +261,38 @@ footer {
         width: 100%;
     }
 
-    .nav-container {
+    .navbar {
+        height: 66px;
+        position: relative;
+
+        box-sizing: border-box;
+    }
+
+    .nav-expanded {
         display: none;
     }
-
-    .navbar {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        position: relative;
-    }
+    
 
     .navbar .checkbox {
         display: block;
+
         position: absolute;
-        transform: scale(3);
+        left: 47%;
+        top: 38%;
+        transform: translate(-47%, -38%);
+
+        transform: scale(2.3);
         opacity: 0;
         cursor: pointer;
+        z-index: 2;
     }
 
     .hamburger-lines {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
         height: 26px;
         width: 32px;
 
@@ -276,6 +300,7 @@ footer {
         flex-direction: column;
         justify-content: space-between;
 
+        padding: 20px;
     }
 
     .hamburger-lines .line {
@@ -310,6 +335,9 @@ footer {
 
     .navbar input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
         transform: rotate(-40deg) scale(1.1);
+    }
+
+    .navbar input[type="checkbox"]:checked ~ .menu-items {
     }
 
     .logo {
