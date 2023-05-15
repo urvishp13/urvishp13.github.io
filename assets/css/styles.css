@@ -254,9 +254,20 @@ footer {
 
     .navbar {
         height: 60px;
+        
         display: flex;
         justify-content: center;
         align-items: center;
+
+        position: relative;
+    }
+
+    .navbar .checkbox {
+        display: block;
+        position: absolute;
+        transform: scale(3);
+        opacity: 0;
+        cursor: pointer;
     }
 
     .hamburger-lines {
