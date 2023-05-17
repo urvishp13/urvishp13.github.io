@@ -54,19 +54,19 @@ header, footer {
     display: flex;
 }
 
-.nav-expanded li:nth-child(odd) {
+li:nth-child(odd) {
     background: #c19352;
 }
 
-.nav-expanded li:nth-child(odd):hover {
+li:nth-child(odd):hover {
     background: #dea048;
 }
 
-.nav-expanded li:nth-child(even) {
+li:nth-child(even) {
     background: #e8b36a;
 }
 
-.nav-expanded li:nth-child(even):hover {
+li:nth-child(even):hover {
     background: #eac085;
 }
 
@@ -287,7 +287,7 @@ footer {
         z-index: 2;
     }
 
-    .hamburger-lines {
+    .navbar .hamburger-lines {
         position: absolute;
         left: 50%;
         top: 50%;
@@ -303,7 +303,7 @@ footer {
         padding: 20px;
     }
 
-    .hamburger-lines .line {
+    .navbar .hamburger-lines .line {
         display: block;
         height: 4px;
         width: 100%;
@@ -311,16 +311,16 @@ footer {
         border-radius: 10px;
     }
 
-    .hamburger-lines .line1 {
+    .navbar .hamburger-lines .line1 {
         transform-origin: 0% 0%;
         transition: transform 0.4s ease-in-out;
     }
 
-    .hamburger-lines .line2 {
+    .navbar .hamburger-lines .line2 {
         transition: transform 0.2s ease-in-out;
     }
 
-    .hamburger-lines .line3 {
+    .navbar .hamburger-lines .line3 {
         transform-origin: 0% 100%;
         transition: transform 0.4s ease-in-out;
     }
@@ -338,6 +338,12 @@ footer {
     }
 
     .navbar input[type="checkbox"]:checked ~ .menu-items {
+        display: block;
+        margin-top: 66px;
+    }
+
+    .navbar input[type="checkbox"]:checked ~ .menu-items li {
+        display: flex;
     }
 
     .logo {
